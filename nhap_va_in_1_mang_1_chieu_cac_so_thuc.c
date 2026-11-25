@@ -1,16 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 int main() {
     int n;
     printf("Nhap so phan tu: ");
     scanf("%d", &n);
-
     if (n <= 0) {
         printf("So phan tu phai lon hon 0!\n");
         return 1;
     }
-
     float *a = (float *)malloc((size_t)n * sizeof(float));
     if (a == NULL) {
         printf("Khong du bo nho!\n");
