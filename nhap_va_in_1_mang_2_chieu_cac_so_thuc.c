@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 int main() {
     int h, c;
     printf("Nhap so hang va so cot: ");
     scanf("%d%d", &h, &c);
-
     if (h <= 0 || c <= 0) {
         printf("So hang va so cot phai lon hon 0!\n");
         return 1;
     }
-
     float **ma = (float **)malloc((size_t)h * sizeof(float *));
     if (ma == NULL) {
         printf("Khong du bo nho!\n");
         return 1;
     }
-
     for (int i = 0; i < h; i++) {
         ma[i] = (float *)malloc((size_t)c * sizeof(float));
         if (ma[i] == NULL) {
@@ -45,6 +41,5 @@ int main() {
         free(ma[i]);
     }
     free(ma);
-
     return 0;
 }
